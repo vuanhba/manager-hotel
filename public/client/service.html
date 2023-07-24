@@ -1,0 +1,625 @@
+<!doctype html>
+<html class="no-js" lang="EN">
+    
+<!-- Mirrored from themehut.co/preview/html/roxal/roxal/roxal/service.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Jun 2023 05:06:43 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Roxal - Hotel Booking HTML5 Template</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+		<!-- CSS here -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/animate.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="assets/css/odometer.css">
+        <link rel="stylesheet" href="assets/css/flaticon.css">
+        <link rel="stylesheet" href="assets/css/slick.css">
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+        <link rel="stylesheet" href="assets/css/datepicker.css">
+        <link rel="stylesheet" href="assets/css/default.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
+    </head>
+    <body>
+
+        <!-- preloader -->
+        <div id="preloader">
+            <div id="loading-center">
+                <div class="loader">
+                    <div class="loader-outter"></div>
+                    <div class="loader-inner"></div>
+                </div>
+            </div>
+        </div>
+        <!-- preloader-end -->
+
+		<!-- Scroll-top -->
+        <button class="scroll-top scroll-to-target" data-target="html">
+            <i class="fas fa-angle-up"></i>
+        </button>
+        <!-- Scroll-top-end-->
+
+        <!-- header-area -->
+        <header>
+            <div id="sticky-header" class="menu-area menu-style-three menu-style-four transparent-header">
+                <div class="container-fulid">
+                    <div class="row g-0">
+                        <div class="col-12">
+                            <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
+                            <div class="menu-wrap">
+                                <nav class="menu-nav">
+                                    <div class="logo"><a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a></div>
+                                    <div class="navbar-wrap main-menu d-none d-lg-flex">
+                                        <ul class="navigation">
+                                            <li class="menu-item-has-children"><a href="#">Home</a>
+                                                <ul class="submenu">
+                                                    <li><a href="index.html">Home One</a></li>
+                                                    <li><a href="index-2.html">Home Two</a></li>
+                                                    <li><a href="index-3.html">Home three</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-item-has-children"><a href="#">Rooms</a>
+                                                <ul class="submenu">
+                                                    <li><a href="room.html">Room List</a></li>
+                                                    <li><a href="room-details.html">Room Details</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="about.html">About</a></li>
+                                            <li class="active"><a href="service.html">Service</a></li>
+                                            <li class="menu-item-has-children"><a href="#">News</a>
+                                                <ul class="submenu">
+                                                    <li><a href="blog.html">Our Blog</a></li>
+                                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="header-action d-none d-md-block">
+                                        <ul>
+                                            <li><a href="#">En</a></li>
+                                            <li><a href="#">Fn</a></li>
+                                            <li class="header-search"><a href="#"><i class="flaticon-search"></i></a></li>
+                                            <li class="header-btn"><a href="room-details.html" class="btn">book <span>now</span></a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                            <!-- Mobile Menu  -->
+                            <div class="mobile-menu">
+                                <nav class="menu-box">
+                                    <div class="close-btn"><i class="fa-solid fa-xmark"></i></div>
+                                    <div class="nav-logo"><a href="index.html"><img src="assets/img/logo/logo_2.png" alt="" title=""></a>
+                                    </div>
+                                    <div class="menu-outer">
+                                        <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                                    </div>
+                                    <div class="social-links">
+                                        <ul class="clearfix">
+                                            <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                                            <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+                                            <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                                            <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                                            <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="menu-backdrop"></div>
+                            <!-- End Mobile Menu -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- header-search -->
+            <div class="search-popup-wrap" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="search-close"><i class="fa-solid fa-xmark"></i></div>
+                <div class="search-wrap text-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h2 class="title">... Search Here ...</h2>
+                                <div class="search-form">
+                                    <form action="#">
+                                        <input type="text" name="search" placeholder="Type keywords here">
+                                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- header-search-end -->
+        </header>
+        <!-- header-area-end -->
+
+        <!-- main-area -->
+        <main>
+
+            <!-- breadcrumb-area -->
+            <section class="breadcrumb-area breadcrumb-bg" >
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-8">
+                            <div class="breadcrumb-content">
+                                <h2 class="title">our services</h2>
+                                <p>welcome to paradise</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-4">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">our service</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb-area-end -->
+
+            <!-- about-area -->
+            <section class="about-area inner-about pt-120">
+                <div class="about-shape"></div>
+                <div class="about-shape-two"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="about-content">
+                                <div class="section-title mb-25">
+                                    <span class="sub-title">Special Offers</span>
+                                    <h2 class="title black-title">Welcome to Spa & Relax Hotel</h2>
+                                </div>
+                                <p>In publishing and graphic design, Lorem ipsum is a placolder text commonly used to demonstrate
+                                    the visual form of a
+                                    document.when an unknown printer took a galley of type and scrambled it to make a type specimen
+                                    book. It has survived
+                                    not only five centuries, but also the leap into electronic typesetting</p>
+                                <div class="about-content-bottom">
+                                    <div class="reservation">
+                                        <div class="icon">
+                                            <img src="assets/img/icon/reservation_icon.png" alt="">
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="title black-title">Reservation</h4>
+                                            <a href="tel:0123456789">555 000 8888</a>
+                                        </div>
+                                    </div>
+                                    <div class="social">
+                                        <span>stay tuned</span>
+                                        <ul>
+                                            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-10">
+                            <div class="about-img">
+                                <img src="assets/img/images/about_img05.jpg" alt="">
+                                <img src="assets/img/images/about_img06.jpg" alt="" class="img-two">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- about-area-end -->
+
+            <!-- counter-area -->
+            <div class="counter-area">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="counter-item">
+                                <span class="title">658</span>
+                                <span class="count odometer" data-count="658"></span>
+                                <p>HAPPY <br> CLIENTS</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="counter-item">
+                                <span class="title">69</span>
+                                <span class="count odometer" data-count="69"></span>
+                                <p>YEARS OF <br> EXPERIENCE</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="counter-item">
+                                <span class="title">45</span>
+                                <span class="count odometer" data-count="45"></span>
+                                <p>awards <br> winning</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="counter-item">
+                                <span class="title">65</span>
+                                <span class="count odometer" data-count="65"></span>
+                                <p>hotel <br> membership</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- counter-area-end -->
+
+            <!-- service-area -->
+            <section class="inner-service-area pt-115 pb-110">
+                <div class="container">
+                    <div class="service-wrap">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="section-title text-center mb-70">
+                                    <span class="sub-title">happenings</span>
+                                    <h2 class="title black-title">Luxury Ultima Services</h2>
+                                    <a href="service.html" class="btn">view all</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row service-active">
+                            <div class="col-lg-4">
+                                <div class="inner-service-item">
+                                    <div class="service-thumb">
+                                        <a href="service.html"><img src="assets/img/service/inner_service01.jpg" alt=""></a>
+                                    </div>
+                                    <div class="service-content">
+                                        <span>happenings</span>
+                                        <h2 class="title"><a href="service.html">Daily Wellness Classes</a></h2>
+                                    </div>
+                                    <div class="service-overlay-content">
+                                        <span>happenings</span>
+                                        <h2 class="title black-title"><a href="service.html">Daily Wellness Classes</a></h2>
+                                        <p>Publishing and graphic design placolder text Lorem commonly used</p>
+                                        <a href="service.html" class="btn">view all</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="inner-service-item">
+                                    <div class="service-thumb">
+                                        <a href="service.html"><img src="assets/img/service/inner_service02.jpg" alt=""></a>
+                                    </div>
+                                    <div class="service-content">
+                                        <span>happenings</span>
+                                        <h2 class="title"><a href="service.html">Sundays In Paradise</a></h2>
+                                    </div>
+                                    <div class="service-overlay-content">
+                                        <span>happenings</span>
+                                        <h2 class="title black-title"><a href="service.html">Sundays In Paradise</a></h2>
+                                        <p>Publishing and graphic design placolder text Lorem commonly used</p>
+                                        <a href="service.html" class="btn">view all</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="inner-service-item">
+                                    <div class="service-thumb">
+                                        <a href="service.html"><img src="assets/img/service/inner_service03.jpg" alt=""></a>
+                                    </div>
+                                    <div class="service-content">
+                                        <span>happenings</span>
+                                        <h2 class="title"><a href="service.html">Daily Wellness Classes</a></h2>
+                                    </div>
+                                    <div class="service-overlay-content">
+                                        <span>happenings</span>
+                                        <h2 class="title black-title"><a href="service.html">Daily Wellness Classes</a></h2>
+                                        <p>Publishing and graphic design placolder text Lorem commonly used</p>
+                                        <a href="service.html" class="btn">view all</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="inner-service-item">
+                                    <div class="service-thumb">
+                                        <a href="service.html"><img src="assets/img/service/inner_service04.jpg" alt=""></a>
+                                    </div>
+                                    <div class="service-content">
+                                        <span>happenings</span>
+                                        <h2 class="title"><a href="service.html">Sundays In Paradise</a></h2>
+                                    </div>
+                                    <div class="service-overlay-content">
+                                        <span>happenings</span>
+                                        <h2 class="title black-title"><a href="service.html">Sundays In Paradise</a></h2>
+                                        <p>Publishing and graphic design placolder text Lorem commonly used</p>
+                                        <a href="service.html" class="btn">view all</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-nav">
+                            <p>more</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- service-area -->
+
+            <!-- room-service-area -->
+            <section class="room-service-area">
+                <div class="container">
+                    <div class="room-service-inner">
+                        <div class="row align-items-end">
+                            <div class="col-md-6">
+                                <div class="section-title">
+                                    <span class="sub-title">room service</span>
+                                    <h2 class="title black-title">The LuxuryCollection</h2>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="seal-content">
+                                    <img src="assets/img/service/seal_img.png" alt="">
+                                    <p>In publishig and graphic design Lorem ipsum is a placolder text commonly used to derate the visual</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="swiper-container room-active">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="room-service-item">
+                                            <div class="room-service-thumb">
+                                                <img src="assets/img/service/room_service01.jpg" alt="">
+                                            </div>
+                                            <div class="room-service-content">
+                                                <div class="content-top">
+                                                    <span>Switzerland</span>
+                                                    <div class="room-facilities">
+                                                        <ul>
+                                                            <li>1-4</li>
+                                                            <li><i class="flaticon-double-bed"></i></li>
+                                                            <li><i class="flaticon-sofa-2"></i></li>
+                                                            <li><i class="flaticon-tv-stand"></i></li>
+                                                            <li><i class="flaticon-bathtub"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <h4 class="title black-title"><a href="room-details.html">Interlaken Land</a></h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="room-service-item">
+                                            <div class="room-service-thumb">
+                                                <img src="assets/img/service/room_service02.jpg" alt="">
+                                            </div>
+                                            <div class="room-service-content">
+                                                <div class="content-top">
+                                                    <span>germany</span>
+                                                    <div class="room-facilities">
+                                                        <ul>
+                                                            <li>1-4</li>
+                                                            <li><i class="flaticon-double-bed"></i></li>
+                                                            <li><i class="flaticon-sofa-2"></i></li>
+                                                            <li><i class="flaticon-tv-stand"></i></li>
+                                                            <li><i class="flaticon-bathtub"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <h4 class="title black-title"><a href="room-details.html">Sundays in Paradise</a></h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="room-service-item">
+                                            <div class="room-service-thumb">
+                                                <img src="assets/img/service/room_service01.jpg" alt="">
+                                            </div>
+                                            <div class="room-service-content">
+                                                <div class="content-top">
+                                                    <span>Switzerland</span>
+                                                    <div class="room-facilities">
+                                                        <ul>
+                                                            <li>1-4</li>
+                                                            <li><i class="flaticon-double-bed"></i></li>
+                                                            <li><i class="flaticon-sofa-2"></i></li>
+                                                            <li><i class="flaticon-tv-stand"></i></li>
+                                                            <li><i class="flaticon-bathtub"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <h4 class="title black-title"><a href="room-details.html">Interlaken Land</a></h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="room-service-item">
+                                            <div class="room-service-thumb">
+                                                <img src="assets/img/service/room_service02.jpg" alt="">
+                                            </div>
+                                            <div class="room-service-content">
+                                                <div class="content-top">
+                                                    <span>germany</span>
+                                                    <div class="room-facilities">
+                                                        <ul>
+                                                            <li>1-4</li>
+                                                            <li><i class="flaticon-double-bed"></i></li>
+                                                            <li><i class="flaticon-sofa-2"></i></li>
+                                                            <li><i class="flaticon-tv-stand"></i></li>
+                                                            <li><i class="flaticon-bathtub"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <h4 class="title black-title"><a href="room-details.html">Sundays in Paradise</a></h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="room-nav">
+                                <button class="swiper-button-prev"></button>
+                                <button class="swiper-button-next"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- room-service-area-end -->
+
+            <!-- gallery-area -->
+            <section class="gallery-area-three pt-105 pb-120">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="gallery-content">
+                                <h2 class="title black-title">Sensual Rest, <br> Crystal Clear Water, <br> Cozy Warmth.</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fulid">
+                    <div class="row g-0 gallery-active-three align-items-center">
+                        <div class="col-lg-12">
+                            <div class="gallery-item">
+                                <img src="assets/img/gallery/s_gallery_img01.jpg" alt="">
+                                <a href="assets/img/gallery/s_gallery_img01.jpg" class="popup-image"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="gallery-item">
+                                <img src="assets/img/gallery/s_gallery_img02.jpg" alt="">
+                                <a href="assets/img/gallery/s_gallery_img02.jpg" class="popup-image"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="gallery-item">
+                                <img src="assets/img/gallery/s_gallery_img03.jpg" alt="">
+                                <a href="assets/img/gallery/s_gallery_img03.jpg" class="popup-image"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="gallery-item">
+                                <img src="assets/img/gallery/s_gallery_img04.jpg" alt="">
+                                <a href="assets/img/gallery/s_gallery_img04.jpg" class="popup-image"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="gallery-item">
+                                <img src="assets/img/gallery/s_gallery_img05.jpg" alt="">
+                                <a href="assets/img/gallery/s_gallery_img05.jpg" class="popup-image"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="gallery-item">
+                                <img src="assets/img/gallery/s_gallery_img06.jpg" alt="">
+                                <a href="assets/img/gallery/s_gallery_img06.jpg" class="popup-image"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- gallery-area-end -->
+
+        </main>
+        <!-- main-area-end -->
+
+        <!-- footer-area -->
+        <footer>
+            <div class="footer-area footer-style-two">
+                <div class="footer-newsletter newsletter-bg">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-6 col-lg-8 col-md-10">
+                                <div class="footer-logo text-center mb-10">
+                                    <a href="index.html"><img src="assets/img/logo/logo.png" alt="logo"></a>
+                                </div>
+                                <div class="newsletter-content text-center">
+                                    <span>five star hotel discover</span>
+                                    <h2 class="title">GET NEWS & OFFERS subscribe us</h2>
+                                    <form action="#" class="newsletter-form">
+                                        <input type="email" placeholder="Enter your email address">
+                                        <button type="submit">subscribe</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-top">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <div class="footer-top-left">
+                                    <div class="footer-icon">
+                                        <img src="assets/img/icon/section_title_icon.png" alt="img">
+                                    </div>
+                                    <div class="footer-content">
+                                        <h4 class="title">Roxal hotel</h4>
+                                        <ul>
+                                            <li>Tel: <a href="tel:123456789">+01 222 999 1414</a></li>
+                                            <li>E-mail: <a href="#">roxal@exemple.com</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="footer-top-right">
+                                    <ul>
+                                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-twitch"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <div class="copyright-text">
+                                    <p>| Copyright © 2022 <a href="#">Roxal</a>. All Rights Reserved.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="footer-lang text-end">
+                                    <div class="dropdown">
+                                        <button class="dropdown-toggle" data-bs-toggle="dropdown">
+                                            <img src="assets/img/icon/united-states.png" alt=""> English
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="index.html"><img src="assets/img/icon/russia.png" alt="">Russia</a>
+                                            <a class="dropdown-item" href="index.html"><img src="assets/img/icon/thailand.png" alt="">Thailand</a>
+                                            <a class="dropdown-item" href="index.html"><img src="assets/img/icon/india.png" alt="">India</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer-area-end -->
+
+
+
+
+
+        <!-- JS here -->
+        <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/jquery.odometer.min.js"></script>
+        <script src="assets/js/swiper-bundle.min.js"></script>
+        <script src="assets/js/slick.min.js"></script>
+        <script src="assets/js/jquery.appear.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/datepicker.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+
+<!-- Mirrored from themehut.co/preview/html/roxal/roxal/roxal/service.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Jun 2023 05:06:48 GMT -->
+</html>
