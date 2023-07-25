@@ -28,7 +28,7 @@ class roomTypeRequest extends FormRequest
             case 'store':
                 //xây dựng rules validate trong này
                 $rules = [
-                    'name'=> 'required|min:3',
+                    'name'=> 'required|min:3|unique:room_type',
                     'description'=> 'required',
                     'image'=>'required|image|mimes:jpeg,jpg,png|max:5120',
                     'price_per_night'=>'required|integer' 
@@ -39,7 +39,7 @@ class roomTypeRequest extends FormRequest
             case 'edit':
                 //xây dựng rules validate trong này
                 $rules = [
-                    'name'=> 'required|min:3',
+                    'name'=> 'required|min:3|unique:room_type',
                     'description'=> 'required',
                     'image'=>'image|mimes:jpeg,jpg,png|max:5120',
                      'price_per_night'=>'required|integer'
