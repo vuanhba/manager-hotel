@@ -231,25 +231,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
-    <script>
-        $(function(){
-            function readURL(input, selector) {
-                if (input.files && input.files[0]) {
-                    let reader = new FileReader();
-        
-                    reader.onload = function (e) {
-                        $(selector).attr('src', e.target.result);
-                    };
-        
-                    reader.readAsDataURL(input.files[0]);
-                }
-            }
-            $("#cmt_truoc").change(function () {
-                readURL(this, '#mat_truoc');
-            });
-         
-        });
-            </script>
+    @include('parts.backend.read')
+   
     @include('parts.backend.mess')
 
 @endsection
