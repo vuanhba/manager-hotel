@@ -154,7 +154,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
    
-    <script>
+   <script>
         $(function(){
             function readURL(input, selector) {
                 if (input.files && input.files[0]) {
@@ -174,6 +174,6 @@
         });
             </script>
 
-@include('parts.backend.mess')
+{{-- @include('parts.backend.js') --}}
 @endsection
 

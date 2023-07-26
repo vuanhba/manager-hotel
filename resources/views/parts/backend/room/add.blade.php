@@ -83,10 +83,7 @@
                        
                                
                             
-                            <div class="mb-3 row"> <label class="col-sm-3 col-form-label">Ảnh nổi bật</label> <div class="col-sm-9"> <div class="row" id="image-preview"> <div class="col-xs-6"></div> </div> <div class="row"> <div class="col-xs-6"> <div class="image"> <img id="mat_truoc" src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg" alt="your image" style="max-width: 200px; height:100px; margin-bottom: 10px;" class="img-fluid "/> </div> <input type="file" name="image" class="form-control-file image-input {{$errors->has('image') ?'is-invalid':''}}" id="cmt_truoc" value="1 {{old('image')}}" > @error('image') <div class="invalid-feedback"> {{$message}} </div> @enderror </div> </div> </div> </div> <div class="mb-3 row"> <label class="col-sm-3 col-form-label">Ảnh Chi tiết</label> <div class="col-sm-9"> <div class="row" id="images-preview"> <div class="col-xs-6"></div> </div> <div class="row"> <div class="col-xs-6"> <div class="images"> <img id="mat_truoc" src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg" alt="your image" style="max-width: 200px; height:100px; margin-bottom: 10px;" class="img-fluid "/> </div> <input type="file" name="images[]" class="form-control-file image-inputs" value="0 {{old('images[]')}}" multiple> </div> </div> </div> </div>
-
-                               
-                                {{-- <div class="mb-3 row">
+                            <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label">Ảnh nổi bật</label>
                                     <div class="col-sm-9">
                                         <div class="row" id="image-preview">
@@ -94,12 +91,12 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-xs-6">
-                                               
                                                 <div class="image">
-                                                    <img src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg" alt="your image" style="max-width: 200px; height:100px; margin-bottom: 10px;" />
+                                                <img id="mat_truoc" src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg" alt="your image"
+                                                     style="max-width: 200px; height:100px; margin-bottom: 10px;" class="img-fluid "/>
                                                 </div>
-                                               
-                                                <input type="file" name="image" class="form-control-file image-input" id="cmt_truoc" value="1 {{old('image')}}" >
+                                                <input type="file" name="image"
+                                                       class="form-control-file image-input {{$errors->has('image') ?'is-invalid':''}}" id="cmt_truoc" value="1 {{old('image')}}" >
                                                 @error('image')
                                                 <div class="invalid-feedback">
                                                     {{$message}}
@@ -118,22 +115,20 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-xs-6">
-                                               
                                                 <div class="images">
-                                                    <img src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg" alt="your image" style="max-width: 200px; height:100px; margin-bottom: 10px;" />
+                                                    <img id="mat_truoc" src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg" alt="your image"
+                                                    style="max-width: 200px; height:100px; margin-bottom: 10px;" class="img-fluid "/>
                                                 </div>
-                                               
+
                                                 <input type="file" name="images[]" class="form-control-file image-inputs" value="0" multiple>
-                                                @error('images')
-                                                <div class="invalid-feedback">
-                                                    {{$message}}
-                                                </div>
-                                                @enderror
+                                               
                                             </div>
                                         </div>
                                     </div>
-                                </div> --}}
-                                
+                                </div>
+
+                               
+                          
                                 
                                 
                                 <div class="mb-3 row">
@@ -173,7 +168,6 @@
     <script src="{{ asset('backend/js/demo.js') }}"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-
     @include('parts.backend.js')
     
 

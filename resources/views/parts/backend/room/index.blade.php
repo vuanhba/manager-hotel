@@ -100,7 +100,7 @@
 
         </div>
     </div>
-    
+    @include('parts.backend.room.modal')
 @endsection
 @section('js')
 
@@ -119,16 +119,47 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script>
+// $('body').on('click', '.btn-info', function (e) {
+//     var id = $(this).attr('data-id');
+//     $('#myModal').modal('show');
+//     e.preventDefault();
+
+//     $.ajax({
+//         url: '/admin/room/detail/' + id,
+//         type: 'GET',
+//         dataType: 'json',
+//         success: function (images) {
+       
+//             var select = $('#imgs');
+            
+//             // Xóa các hình ảnh hiện tại trong modal (nếu có)
+//             select.empty();
+
+//             // Lặp qua tất cả các hình ảnh trong mảng và thêm chúng vào modal
+//             images.forEach(function (image) {
+//                 var imageUrl = '{{ asset('storage/') }}' + '/' + image.image;
+//                 var imgElement = '<img src="' + imageUrl + '" style="width: 100px" alt="">';
+//                 select.append(imgElement);
+//             });
+//         },
+//         error: function (error) {
+//             console.log('Error:', error);
+//         }
+//     });
+// });
 
 
-        $(document).ready(function() {
-    $('#dataTable').DataTable();
-});
-  </script>
  
    
  
+ 
 
+
+
+
+
+    </script>
+    @include('parts.backend.js')
     
 
 @endsection

@@ -97,5 +97,5 @@
         });
         
     </script>
-  @include('parts.backend.mess')
+
 @endsection

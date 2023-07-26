@@ -34,7 +34,7 @@
                     <span class="nav-text">Phòng</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="{{route('admin.room.index')}}">Danh sách</a></li>
+                    <li><a href="{{route('admin.room.index')}}">Danh sách phòng</a></li>
                     <li><a href="{{route('admin.room.getform')}}">Thêm phòng</a></li>
 
 
@@ -47,24 +47,12 @@
                 <span class="nav-text">Loại phòng</span>
             </a>
             <ul aria-expanded="false">
-                <li><a href="{{route('admin.roomType.index')}}">Danh sách</a></li>
+                <li><a href="{{route('admin.roomType.index')}}">Danh sách phòng</a></li>
                 <li><a href="{{route('admin.roomType.store')}}">Thêm loại phòng</a></li>
             </ul>
           
 
         </li>
-        {{-- <li><a class="has-arrow " href="{{route('admin.user.index')}}" aria-expanded="false">
-            <i class="flaticon-025-dashboard"></i>
-            <span class="nav-text">Người dùng</span>
-        </a>
-        <ul aria-expanded="false">
-            <li><a href="{{route('admin.user.index')}}">Danh sách</a></li>
-            <li><a href="{{route('admin.user.store')}}">Thêm người dùng</a></li>
-        </ul>
-      
-
-    </li> --}}
-        
             
      
      

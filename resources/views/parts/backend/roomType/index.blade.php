@@ -102,11 +102,7 @@
     <script src="{{ asset('backend/js/demo.js') }}"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-  <script>
-        $(document).ready(function() {
-    $('#dataTable').DataTable();
-});
-  </script>
+    @include('parts.backend.js')
     
 
 @endsection

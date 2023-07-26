@@ -35,23 +35,24 @@
                                     @enderror
                                     </div>
                                     </div>
-                                    <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Ảnh nổi bật</label>
-                                        <div class="col-sm-9">
-                                        <div class="row">
-                                            <div class="col-xs-6">
-                                                <img id="mat_truoc_preview" src="{{ $data->image?''.Storage::url($data->image):''}}" alt="your image"
-                                                     style="max-width: 200px; height:100px; margin-bottom: 10px;" class="img-fluid image"/>
-                                                <input type="file" name="image"
-                                                       class="form-control-file {{$errors->has('image') ?'is-invalid':''}}" id="cmt_truoc" value="{{old('image')}}" >
-                                                @error('image')
-                                                <div class="invalid-feedback">
-                                                    {{$message}}
+                                   
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Ảnh nổi bật</label>
+                                            <div class="col-sm-9">
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <img id="mat_truoc" src="{{ $data->image?''.Storage::url($data->image):''}}" alt="your image"
+                                                             style="max-width: 200px; height:100px; margin-bottom: 10px;" class="img-fluid "/>
+                                                        <input type="file" name="image"
+                                                               class="form-control-file {{$errors->has('image') ?'is-invalid':''}}" id="cmt_truoc" value="{{old('image')}}" >
+                                                        @error('image')
+                                                        <div class="invalid-feedback">
+                                                            {{$message}}
+                                                        </div>
+                                                        @enderror
+                                                    </div>
                                                 </div>
-                                                @enderror
                                             </div>
-                                        </div>
-                                        </div>
                                         </div>
                                         
                                         <div class="mb-3 row">
@@ -117,7 +118,7 @@
     <script src="{{ asset('backend/js/demo.js') }}"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-    @include('parts.backend.js')
-    
+    {{-- @include('parts.backend.js') --}}
+    @include('parts.backend.read')
 
 @endsection
