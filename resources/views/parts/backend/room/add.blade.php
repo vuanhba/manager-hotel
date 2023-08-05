@@ -59,6 +59,27 @@
                                 </div>
                                 <div class="mb-3 row">
                                    
+                                        <label class="col-sm-3 col-form-label">Loại gói</label>
+                                        <div class="col-sm-9">
+                                       
+                                        <select class="default-select form-control wide {{$errors->has('id_package') ?'is-invalid':''}}" name="id_package" id="inlineFormCustomSelect">
+                                            <option selected value="">Chọn loại gói</option>
+                                            @foreach ($packages as $item)
+                                            <option value="{{$item->id}}">{{$item->name}}</option>
+                                      
+                                            @endforeach
+                                          
+                                        </select>
+                                        @error('name')
+                                        <div class="invalid-feedback">
+                                            {{$message}}
+                                        </div>
+                                @enderror
+                                     
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                   
                                     <label class="col-sm-3 col-form-label">Tình trạng</label>
                                     <div class="col-sm-9">
                                    
@@ -97,6 +118,7 @@
                                                 </div>
                                                 <input type="file" name="image"
                                                        class="form-control-file image-input {{$errors->has('image') ?'is-invalid':''}}" id="cmt_truoc" value="1 {{old('image')}}" >
+                                                       
                                                 @error('image')
                                                 <div class="invalid-feedback">
                                                     {{$message}}
@@ -118,7 +140,9 @@
                                                 <div class="images">
                                                     <img id="mat_truoc" src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg" alt="your image"
                                                     style="max-width: 200px; height:100px; margin-bottom: 10px;" class="img-fluid "/>
+
                                                 </div>
+                                                <button type="button" class="btn btn-sm btn-danger delete-image">Xóa</button>
 
                                                 <input type="file" name="images[]" class="form-control-file image-inputs" value="0" multiple>
                                                
@@ -127,7 +151,17 @@
                                     </div>
                                 </div>
 
-                               
+                                <div class="mb-3 row">
+                                    <label class="col-sm-3 col-form-label">Mô tả</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control  {{$errors->has('description') ?'is-invalid':''}}" placeholder="Mô tả"  name="description" value="{{old('description')}}">
+                                        @error('description')
+                                        <div class="invalid-feedback">
+                                        {{$message}}
+                                        </div>
+                                        @enderror
+                                    </div>
+                                </div>
                           
                                 
                                 

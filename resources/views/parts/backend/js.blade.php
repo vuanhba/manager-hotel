@@ -3,6 +3,7 @@
     $('#dataTable').DataTable();
 });
 
+
 $(function () {
     function readURL(input, index, isMultiple = false) {
         if (input.files[index]) {
@@ -35,10 +36,20 @@ $(function () {
         let files = this.files;
         for (let i = 0; i < files.length; i++) {
             readURL(this, i, true);
+            
         }
+        
     });
+
+  
 });
 
+$(document).on("click", ".delete-image", function() {
+    console.log("Button clicked!");
+    var imageContainer = $(this).prev(".images");
+    console.log("Image container:", imageContainer);
+    imageContainer.remove();
+});
 
 
 

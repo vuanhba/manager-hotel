@@ -12,7 +12,7 @@
  
 
 @endsection
-
+@include('parts.backend.read')
 @section('content')
 <div class="content-body">
     <div class="container-fluid">
@@ -61,7 +61,7 @@
                                 <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label">Số điện thoại</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control  {{$errors->has('phone') ?'is-invalid':''}}" placeholder="phone"  name="phone" value="{{old('phone')}}">
+                                        <input type="number" min=0 class="form-control  {{$errors->has('phone') ?'is-invalid':''}}" placeholder="phone"  name="phone" value="{{old('phone')}}">
                                         @error('phone')
                                         <div class="invalid-feedback">
                                         {{$message}}
@@ -77,10 +77,8 @@
                                     <select class="default-select form-control wide {{$errors->has('status') ?'is-invalid':''}}" name="status" id="inlineFormCustomSelect">
                                        
                                         <option selected value="">Chọn tình trạng</option>
-                                        
-                                        <option value="1">Hoạt động</option>
-                                        <option value="0">Khóa</option>
-                                        
+                                        <option value="1" {{ old('status') == '1' ? 'selected' : '' }}>Hoạt động</option>
+                                        <option value="0" {{ old('status') == '0' ? 'selected' : '' }}>Khóa</option>
                                       
                                     </select>
                                     @error('status')
@@ -91,7 +89,26 @@
                                  
                                 </div>
                             </div>
-                            
+                            <div class="mb-3 row">
+                                   
+                                <label class="col-sm-3 col-form-label">Chức vụ</label>
+                                <div class="col-sm-9">
+                               
+                                <select class="default-select form-control wide {{$errors->has('id_role') ?'is-invalid':''}}" name="id_role" id="inlineFormCustomSelect">
+                                   
+                                    <option selected value="">Chọn chức vụ</option>
+                                    <option value="1" {{ old('status') == '1' ? 'selected' : '' }}>Admin</option>
+                                    <option value="0" {{ old('status') == '0' ? 'selected' : '' }}>Người dùng</option>
+                                  
+                                </select>
+                                @error('id_role')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                        @enderror
+                             
+                            </div>
+                        </div>
                                 <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label">Ảnh nổi bật</label>
                                     <div class="col-sm-9">
@@ -174,6 +191,6 @@
         });
             </script>
 
-{{-- @include('parts.backend.js') --}}
+
 @endsection
 

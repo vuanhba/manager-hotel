@@ -5,7 +5,7 @@
     </div>
 </div>
 <div class="nav-header">
-    <a href="index.html" class="brand-logo">
+    <a href="{{route('admin.das')}}" class="brand-logo">
         <svg class="logo-abbr" xmlns="http://www.w3.org/2000/svg" width="47.426" height="56.91" viewBox="0 0 47.426 56.91">
           <g id="Group_25" data-name="Group 25" transform="translate(-56 -32)">
             <path id="hotel" d="M49.737,55.935a.948.948,0,0,1-.948.976h-5A3.794,3.794,0,0,1,40,53.116V34.146a3.794,3.794,0,0,1,3.794-3.794h4.98a.949.949,0,0,1,.949.949C49.717,49.164,49.687,54.3,49.737,55.935Zm-3.22-16.1a.949.949,0,1,0-1.9,0v4.031a.949.949,0,0,0,1.9,0Zm40.9-5.691v18.97a3.794,3.794,0,0,1-3.794,3.794h-5a.948.948,0,0,1-.948-.976c.05-1.634.019-6.76.018-24.633a.949.949,0,0,1,.949-.949h4.98A3.794,3.794,0,0,1,87.422,34.146ZM82.8,39.837a.949.949,0,1,0-1.9,0v4.031a.949.949,0,0,0,1.9,0ZM61.338,56.91H66.08a.949.949,0,0,0,.949-.949V47.07a.949.949,0,0,0-.949-.949H61.338a.949.949,0,0,0-.949.949v8.892A.949.949,0,0,0,61.338,56.91ZM75.8,20.63V55.962a.949.949,0,0,1-.949.949h-4.98a.949.949,0,0,1-.949-.949V45.172a.949.949,0,0,0-.949-.949H59.441a.949.949,0,0,0-.949.949V55.962a.949.949,0,0,1-.949.949h-4.98a.949.949,0,0,1-.949-.949V20.63a3.794,3.794,0,0,1,3.794-3.794h16.6A3.794,3.794,0,0,1,75.8,20.63ZM68.452,36.517a.949.949,0,0,0-.949-.949H59.915a.949.949,0,0,0,0,1.9H67.5A.948.948,0,0,0,68.452,36.517Zm1.66-9.129a.949.949,0,0,0-.949-.949H58.255a.949.949,0,1,0,0,1.9H69.163A.948.948,0,0,0,70.111,27.388Z" transform="translate(16.004 32)" fill="#135846"/>
@@ -215,16 +215,13 @@
                         <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
                             <img src="{{asset('backend/images/profile/pic1.jpg')}}" width="20" alt=""/>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-end">
-                            <a href="app-profile.html" class="dropdown-item ai-icon">
+                         <div class="dropdown-menu dropdown-menu-end">
+                            {{-- <a href="app-profile.html" class="dropdown-item ai-icon">
                                 <svg id="icon-user2" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                                 <span class="ms-2">Profile </span>
-                            </a>
-                            <a href="email-inbox.html" class="dropdown-item ai-icon">
-                                <svg id="icon-inbox1" xmlns="http://www.w3.org/2000/svg" class="text-success" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                                <span class="ms-2">Inbox </span>
-                            </a>
-                            <a href="login.html" class="dropdown-item ai-icon">
+                            </a> --}}
+                           
+                            <a href="{{route('admin.logout')}}" class="dropdown-item ai-icon">
                                 <svg  xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
                                 <span class="ms-2">Logout </span>
                             </a>

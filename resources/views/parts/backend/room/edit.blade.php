@@ -65,6 +65,27 @@
                                 </div>
                                 <div class="mb-3 row">
                                    
+                                    <label class="col-sm-3 col-form-label">Loại gói</label>
+                                    <div class="col-sm-9">
+                                   
+                                    <select class="default-select form-control wide {{$errors->has('id_package') ?'is-invalid':''}}" name="id_package" id="inlineFormCustomSelect">
+                                        <option selected value="">Chọn loại gói</option>
+                                        @foreach ($packages as $item)
+                                        <option value="{{$item->id}}"{{$item->id==$packagesId?'selected':''}} >{{$item->name}}</option>
+                                  
+                                        @endforeach
+                                      
+                                    </select>
+                                    @error('id_package')
+                                    <div class="invalid-feedback">
+                                        {{$message}}
+                                    </div>
+                            @enderror
+                                 
+                                </div>
+                            </div>
+                                <div class="mb-3 row">
+                                   
                                     <label class="col-sm-3 col-form-label">Tình trạng</label>
                                     <div class="col-sm-9">
                                    
@@ -96,7 +117,7 @@
                                             </div>
                                             @endforeach
                                             @endif
-                                            <input type="file" name="image" class="form-control-file image-input" id="cmt_truoc" value="1 {{old('image')}}" >
+                                            <input type="file" name="image" class="form-control-file image-input {{$errors->has('image') ?'is-invalid':''}}" id="cmt_truoc" value="1 {{old('image')}}" >
                                             @error('image')
                                             <div class="invalid-feedback">
                                                 {{$message}}
@@ -119,10 +140,13 @@
                                             @foreach ($images[0] as $item)
                                             <div class="images">
                                                 <img src="{{Storage::url($item->image)}}" alt="your image" style="max-width: 200px; height:100px; margin-bottom: 10px;" />
+
                                             </div>
+
+
                                             @endforeach
                                             @endif
-                                            <input type="file" name="images[]" class="form-control-file image-inputs" value="0" multiple>
+                                            <input type="file" name="images[]" class="form-control-file image-inputs {{$errors->has('images[]') ?'is-invalid':''}}" value="0" multiple>
                                             @error('images')
                                             <div class="invalid-feedback">
                                                 {{$message}}
@@ -132,7 +156,17 @@
                                     </div>
                                 </div>
                             </div>
-                            
+                            <div class="mb-3 row">
+                                <label class="col-sm-3 col-form-label">Mô tả</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control  {{$errors->has('description') ?'is-invalid':''}}" placeholder="Mô tả"  name="description" value="{{ $room->description ? $room->description : old('description') }}">
+                                    @error('description')
+                                    <div class="invalid-feedback">
+                                    {{$message}}
+                                    </div>
+                                    @enderror
+                                </div>
+                            </div>
                                 
                                 
                                 <div class="mb-3 row">
@@ -173,6 +207,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     @include('parts.backend.js')
+
     
 
 @endsection

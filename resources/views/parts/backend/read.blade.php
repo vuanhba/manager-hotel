@@ -1,22 +1,40 @@
 <script>
-    $(function(){
-            function readURL(input, selector) {
-                if (input.files && input.files[0]) {
-                    let reader = new FileReader();
-        
-                    reader.onload = function (e) {
-                        $(selector).attr('src', e.target.result);
-                    };
-        
-                    reader.readAsDataURL(input.files[0]);
-                }
-            }
-             $("#cmt_truoc").change(function () {
-                readURL(this, '#mat_truoc');
-            });
-            // $("#cmt_truocs").change(function () {
-            //     readURL(this, '#mat_truocs');
-            // });
-         
-        });
+     @if(Session::has('message'))
+  toastr.options =
+  {
+  	"closeButton" : true,
+  	"progressBar" : true
+  }
+  		toastr.success("{{ session('message') }}");
+  @endif
+
+  @if(Session::has('error'))
+  toastr.options =
+  {
+  	"closeButton" : true,
+  	"progressBar" : true
+  }
+  		toastr.error("{{ session('error') }}");
+  @endif
+
+  @if(Session::has('info'))
+  toastr.options =
+  {
+  	"closeButton" : true,
+  	"progressBar" : true
+  }
+  		toastr.info("{{ session('info') }}");
+  @endif
+
+  @if(Session::has('warning'))
+  toastr.options =
+  {
+  	"closeButton" : true,
+  	"progressBar" : true
+  }
+  		toastr.warning("{{ session('warning') }}");
+  @endif
+
+
 </script>
+  

@@ -13,7 +13,10 @@ use Yajra\DataTables\Facades\DataTables;
 
 class RoomTypeController extends Controller
 {    public $title=[];
- 
+ public function das(){
+    $this->title['title'] ='Trang Chủ';
+    return view('parts.backend.dasbo',$this->title);
+ }
     public function  index(){
         $this->title['title'] ='Loại Phòng';
         $selectData = RoomType::select('id','name','description','image','price_per_night')->limit(20)->get();

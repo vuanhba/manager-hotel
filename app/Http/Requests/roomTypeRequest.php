@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class roomTypeRequest extends FormRequest
@@ -39,7 +40,7 @@ class roomTypeRequest extends FormRequest
             case 'edit':
                 //xây dựng rules validate trong này
                 $rules = [
-                    'name'=> 'required|min:3|unique:room_type',
+                    'name'=> 'required|min:3|',Rule::unique('room_type')->ignore($this->id),
                     'description'=> 'required',
                     'image'=>'image|mimes:jpeg,jpg,png|max:5120',
                      'price_per_night'=>'required|integer'
@@ -57,7 +58,8 @@ class roomTypeRequest extends FormRequest
             'image'=>'Định dạng ảnh sai ',
             'integer'=>'Sai định dạng',
             'min'=>'Vui lòng nhập :attribute lớn hơn :min',
-            'unique'=>':attribute đã tồn tại vui lòng chọn :attribute khác'
+            'unique'=>':attribute đã tồn tại vui lòng chọn :attribute khác',
+         
         ];
     }
     public function attributes()

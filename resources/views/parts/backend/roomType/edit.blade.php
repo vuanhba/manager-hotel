@@ -118,7 +118,6 @@
     <script src="{{ asset('backend/js/demo.js') }}"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-    {{-- @include('parts.backend.js') --}}
     @include('parts.backend.read')
 
 @endsection

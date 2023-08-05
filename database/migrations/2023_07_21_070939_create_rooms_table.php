@@ -12,13 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('rooms', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('room_type_id');
+            $table->id('id');
+            $table->unsignedBigInteger('room_type_id');
+       
             $table->string('room_number');
             $table->integer('status')->default(1);
-         
             $table->timestamps();
+            $table->foreign('room_type_id')->references('id')->on('room_type');
         });
+        
     }
 
     /**

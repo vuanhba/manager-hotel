@@ -30,7 +30,7 @@ class roomRequest extends FormRequest
                 $rules = [
                     'room_number'=> 'required',
                     'room_type_id'=> 'required',
-                 
+                    'description'=> 'required',
                    
 
                     'status'=>'required' 
@@ -44,8 +44,8 @@ class roomRequest extends FormRequest
                     'room_number'=> 'required',
                     'room_type_id'=> 'required',
                     'image'=>'required|image|mimes:jpeg,jpg,png|max:5120',
-                    'images[]'=>'required|image|mimes:jpeg,jpg,png',
-
+                    'images'=>'required|image|mimes:jpeg,jpg,png',
+                    'description'=>'required',
                     'status'=>'required' 
                 ];
 
@@ -59,6 +59,9 @@ class roomRequest extends FormRequest
         return [
             'required'=>':attribute bắt buộc phải nhập',
             'image'=>'Định dạng ảnh sai ',
+            'mimes'=>'Chỉ chấp nhận các định dạng: jpeg, jpg, png',
+           
+
             'integer'=>'Sai định dạng',
             'min'=>'Vui lòng nhập :attribute lớn hơn :min',
             'unique'=>':attribute đã tồn tại vui lòng chọn :attribute khác'
@@ -71,7 +74,8 @@ class roomRequest extends FormRequest
             'room_type_id'=>'Loại phòng',
             'image'=>'Ảnh nổi bật',
             'images[]'=>'Ảnh phụ',
-            'status'=>'Trạng thái'
+            'status'=>'Trạng thái',
+            'description'=>'Mô tả'
         ];
     }
 }

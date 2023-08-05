@@ -12,43 +12,62 @@ use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\roomRequest;
 use App\Http\Requests\roomTypeRequest;
+use App\Models\Packages;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
 
 class RoomController extends Controller
 {    public $title = [];
-    public function index(){
-    //    $data=Room::select('id','room_number','room_type_id','status')->get();
-    $rooms = DB::table('rooms as r')
-    ->join('room_type as rt', 'r.room_type_id', '=', 'rt.id')
-    ->select(
-        'r.*',
-        'rt.name as roomTypeName',
-        'rt.image as roomTypeImage',
-        'rt.price_per_night as roomTypePrice',
-    )
-    ->limit(20)
-    ->get();
+    public function index()
+    {
+     
+        $rooms = Room::with('packages','roomtype')->get();
+        foreach ($rooms as $room) {
+            $total_price = $room->roomtype->price_per_night;
     
-        $this->title['title']="Phòng";
-        return view('parts.backend.room.index',$this->title,compact('rooms'));
+            if ($room->packages->count() > 0) {
+                $total_price += $room->packages->sum('price');
+            }
+    
+         
+    
+            $room->total_price = $total_price;
+            $room->update(['total_price' => $total_price]);
+        }
+        
+        //    dd($rooms);
+        $this->title['title'] = "Phòng";
+        return view('parts.backend.room.index', $this->title, compact('rooms'));
     }
-
-
+    
+      
     public function getform(){
         $this->title['title']="Thêm phòng";
         $roomType = RoomType::select('id','name')->get();
-        return view('parts.backend.room.add',$this->title,compact('roomType'));
+        $packages = Packages::select('id','name')->get();
+        return view('parts.backend.room.add',$this->title,compact('roomType','packages'));
     }
 
 public function store(roomRequest $request) {
-    $data = $request->except('_token');
-    $room = Room::create([
-        'room_number' => $request->room_number,
-        'room_type_id' => $request->room_type_id,
-        'status' => $request->status,
-    ]);
+    
+
+    $room = new Room();
+    $room->room_number = $request->input('room_number');
+    $room->room_type_id = $request->input('room_type_id');
+    $room->description = $request->input('description');
+    $room->status = $request->input('status');
+    $room->save();
+  
+    $packageId = $request->input('id_package');
+
+    if ($packageId) {
+        $room->packages()->attach($packageId);
+    }
+
+
+ 
+   
 
     $images = [];
 
@@ -84,24 +103,38 @@ public function getDataEdit($id){
          $room=Room::find($id);
          $roomType=roomType::select('id','name')->get();
         //  $image=Image::select('image','is_featured')->where('room_id',$id)->get();
-    
+
+        $packagesId = $room->packages->pluck('id')->first();
+     
+
+        $packages=Packages::all();
         $images = Image::where('room_id',$id)->whereIn('is_featured', [0, 1])->get()->groupBy('is_featured');
 
           
-       return view('parts.backend.room.edit',$this->title,compact('room','roomType','images'));
+       return view('parts.backend.room.edit',$this->title,compact('room','roomType','images','packages','packagesId'));
        
 }
 public function edit(Request $request,$id){
     $room = Room::findOrFail($id);
     $dataimages = Image::where('room_id', $room->id)->get();
+ 
     $result= $room->update([
         'room_number' => $request->room_number,
         'room_type_id' => $request->room_type_id,
         'status' => $request->status,
+        'description'=>$request->description
     ]);
 
-   
+   $packagesId = $request->input('id_package');
+    if($packagesId){
+        $room->packages()->sync([$packagesId]);
+    }else{
+   $packagesId = $request->input('id_package');
 
+    }
+
+    
+    
     // Xóa các ảnh cũ từ thư mục Storage
    
     

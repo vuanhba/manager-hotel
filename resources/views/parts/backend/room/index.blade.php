@@ -39,38 +39,61 @@
                                     <thead>
                                     <tr>
                                    
-                                        <th colspan="1">Loại phòng</th>
+                                        <th colspan="1">Loại phòng</th> 
                                         <th>Số phòng</th>
-                                        <th>Giá</th>
-                                        <th>Tình trạng</th>
+                                        <th>Gói</th>
+                                         <th>Giá</th> 
+                                         <th>Mô tả</th>
+                                        <th>Tình trạng</th> 
                                         <th class="bg-none"></th>
 
 
                                     </tr>
                                     </thead>
                                     <tbody>
+                                      
+                                    
 
-                                    @foreach($rooms as $room)
-                                        <tr role="row">
-                                           
+
+                                        @foreach($rooms as $room)
+                                        <tr>
                                             <td>
-                                                <img src="{{$room->roomTypeImage?''.Storage::url($room->roomTypeImage):''}}" style="width: 100px" alt="">
-                                                {{$room->roomTypeName}}
+                                                <img src="{{ $room->roomtype->image ? Storage::url($room->roomtype->image) : '' }}" style="width: 100px" alt="">
+                                                {{ $room->roomtype->name }}
+                                                {{-- {{ $room->roomtype->price_per_night }} --}}
+
                                             </td>
-                                            <td>{{$room->room_number}}</td>
-                                           
-                                              
-                                            <td>{{$room->roomTypePrice}}</td>
-                                            
+                                            <td>{{ $room->room_number }}</td>
+
+                                            @if ($room->packages->count() > 0)
+                                                @foreach ($room->packages as $package)
+                                                    <td>{{ $package->name}}
+                                                        {{-- {{ $package->price }} --}}
+                                                    </td>
+                                                 
+
+                                                @endforeach
+                                            @else
+                                                <td colspan="number_of_package_columns">Không có gói nào</td>
+                                            @endif
+                                            <td>{{  number_format($room->total_price, 0, '.', '.') }} VND</td>
+                                            <td>{{$room->description}}</td>
                                             <td>
-                                                @if ($room->status ==0)
+                                                @if ($room->status == 0)
                                                     Khóa
-                                                
-                                                @elseif($room->status ==1)
-                                               Hoạt động
+                                                @elseif ($room->status == 1)
+                                                    Hoạt động
                                                 @endif
                                             </td>
-                                            <td><div class="dropdown dropend">
+                                            
+                                        
+                                    
+                                    
+                                              
+                                             
+                                           
+                                             <td><div class="dropdown dropend">
+
                                                 <a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -81,11 +104,11 @@
                                                 <div class="dropdown-menu">
                                                   
                                                     <a class="dropdown-item btn-edit" href="{{ route('admin.room.edit',['id'=>$room->id]) }}">Chỉnh Sửa</a>
-                                                    <a class="dropdown-item btn-remove" href="{{ route('admin.room.delete',['id'=>$room->id]) }}">Xóa</a>
+                                                    <a class="dropdown-item btn-remove" onclick="return confirm('bạn có chắc chắn muốn xóa không?')" href="{{ route('admin.room.delete',['id'=>$room->id]) }}">Xóa</a>
                                                 </div>
-                                            </div></td>
-                                        </tr>
-                                    @endforeach
+                                            </div></td> 
+                                        </tr> 
+                                    @endforeach 
                                     </tbody>
                                 </table>
 

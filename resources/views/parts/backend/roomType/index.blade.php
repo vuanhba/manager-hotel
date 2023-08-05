@@ -53,7 +53,7 @@
                                             <td>{{$room->name}}</td>
                                             <td>{{$room->description}}</td>
                                             <td><img src="{{ $room->image?''.Storage::url($room->image):''}}"style="width: 100px"/></td>
-                                            <td>{{$room->price_per_night}}</td>
+                                            <td>{{ number_format($room->price_per_night, 0, '.', '.')}}</td>
                                             <td><div class="dropdown dropend">
                                                 <a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,7 +65,7 @@
                                                 <div class="dropdown-menu">
                                                     {{-- <a class="dropdown-item btn-edit" href="javascript:void(0);" data-id="{{ $room->id }}">Chỉnh Sửa</a> --}}
                                                     <a class="dropdown-item btn-remove" href="{{ route('admin.roomType.edit',['id'=>$room->id]) }}">Chỉnh Sửa</a>
-                                                    <a class="dropdown-item btn-remove" href="{{ route('admin.roomType.softdelete',['id'=>$room->id]) }}">bỏ vào thùng rác</a>
+                                                    <a class="dropdown-item btn-remove" onclick="return confirm('bạn có chắc chắn muốn xóa không?')" href="{{ route('admin.roomType.softdelete',['id'=>$room->id]) }}">bỏ vào thùng rác</a>
                                                 </div>
                                             </div></td>
                                         </tr>

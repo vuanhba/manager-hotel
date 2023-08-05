@@ -10,4 +10,5 @@ class Image extends Model
     use HasFactory;
     protected $table = "images";
     protected $fillable = ['room_id','image','is_featured'];
+   
 }
